@@ -1278,23 +1278,6 @@ var IgxGrid1Component = /** @class */ (function (_super) {
         _super.prototype.ngOnInit.call(this);
         this.name = 'Infragistics / IgxGrid';
     };
-    IgxGrid1Component.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        var grid = this.grid.nativeElement;
-        // const verticalScroll = this.grid.verticalScrollContainer.getVerticalScroll() as HTMLElement;
-        // console.log(verticalScroll.parentElement);
-        // fromEvent(this.grid.verticalScrollContainer.getVerticalScroll(), 'scroll', {
-        //   capture: true
-        // }).subscribe(event => console.log('vertical scroll'));
-        this.zone.runOutsideAngular(function () {
-            _this.vScrollParent = _this.grid.verticalScrollContainer.getVerticalScroll().parentElement;
-            _this.vScrollParent.addEventListener('scroll', _this.debounceVScroll, true);
-            _this.hScrollParent = _this.grid.parentVirtDir.getHorizontalScroll().parentElement;
-            // const debounceHorizontalScroll = this.debounceVScroll(hScroll)
-            _this.hScrollParent.addEventListener('scroll', _this.debounceHScroll, true);
-        });
-        _super.prototype.ngAfterViewInit.call(this);
-    };
     return IgxGrid1Component;
 }(_common_base_grid_base_grid_component__WEBPACK_IMPORTED_MODULE_3__["BaseGridComponent"]));
 
